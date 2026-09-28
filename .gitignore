@@ -3,6 +3,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Ignore downloaded Maven files
+apache-maven-*/
+maven.zip
+
 ### IntelliJ IDEA ###
 .idea/
 *.iws
