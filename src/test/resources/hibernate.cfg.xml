@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- H2 In-Memory Database connection settings for Testing -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:mem:ecommerce_db;DB_CLOSE_DELAY=-1</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"></property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <!-- Entity mappings -->
+        <mapping class="com.ecommerce.entity.Category"/>
+        <mapping class="com.ecommerce.entity.Product"/>
+        <mapping class="com.ecommerce.entity.User"/>
+        <mapping class="com.ecommerce.entity.Order"/>
+        <mapping class="com.ecommerce.entity.OrderDetail"/>
+    </session-factory>
+</hibernate-configuration>
